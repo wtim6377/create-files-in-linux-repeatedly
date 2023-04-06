@@ -1,0 +1,24 @@
+#!/bin/bash
+Currentdate=$(date +"%y%m%d")
+if
+[[ ! -e timwilson-$Currentdate ]] 
+then
+mkdir timwilson-$Currentdate
+
+fi
+
+
+
+largestfile=$(ls timwilson-$Currentdate | wc -l)
+
+x=1
+
+while [[ $x -le 25 ]]
+do
+echo $largestfile
+let largestfile++
+touch /home/vagrant/timwilson-$Currentdate/timwilson_$largestfile.txt
+let x++
+done
+
+t.sh
